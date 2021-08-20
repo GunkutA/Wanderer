@@ -8,6 +8,7 @@ public class EnemyController : MonoBehaviour
     public float enemySpeed = 3.0f;
     public float changeTime = 3.0f;
     public bool isVertical;
+    bool broken = true;
     float timer;
     int direction = 1;
     Animator animator;
@@ -22,6 +23,11 @@ public class EnemyController : MonoBehaviour
     
     void Update()
     {
+        //If robot is not broken then return
+        if(!broken)
+        {
+            return;
+        }
         timer -= Time.deltaTime;
         if(timer<0)
         {
@@ -34,6 +40,11 @@ public class EnemyController : MonoBehaviour
     private void FixedUpdate()
     {
         Vector2 position = rigidbody2D.position;
+        //If robot is not broken then return
+        if(!broken)
+        {
+            return;
+        }
         if(isVertical)
         {
             position.y = position.y + enemySpeed * Time.deltaTime*direction;
@@ -57,6 +68,13 @@ public class EnemyController : MonoBehaviour
         {
             player.ChangeHealth(-1);
         }
+    }
+
+    public void Fix()
+    {
+        broken = false;
+        rigidbody2D.simulated = false;
+        animator.SetTrigger("Fixed");
     }
 
 
