@@ -144,3 +144,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5c43b5ac1fd01845b5ecf4a2bcc6a50, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  projectileClip: {fileID: 8300000, guid: b2edfd40873655249ba0e01a5cf705be, type: 3}
+  robotFixClip: {fileID: 8300000, guid: e7fa1971a86d60945bb64585c0ac14d5, type: 3}

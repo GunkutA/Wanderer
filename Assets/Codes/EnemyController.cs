@@ -73,10 +73,10 @@ public class EnemyController : MonoBehaviour
 
     public void Fix()
     {
+        smokeEffect.Stop();
         broken = false;
         rigidbody2D.simulated = false;
-        animator.SetTrigger("Fixed");
-        smokeEffect.Stop();
+        animator.SetTrigger("Fixed");   
     }
 
 
